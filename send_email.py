@@ -1,4 +1,5 @@
-import smtplib, ssl
+import smtplib
+import ssl
 import os
 
 email = "ahmed.elshabah2015@gmail.com"
@@ -12,7 +13,3 @@ def send_gmail(message):
     with smtplib.SMTP_SSL(host, port, context=context) as server:
         server.login(email, passw)
         server.sendmail(email, email, message)
-
-
-if __name__ == "__main__":
-    send_gmail()
